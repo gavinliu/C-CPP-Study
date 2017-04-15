@@ -5,8 +5,9 @@
 
 union Value {
     int x;
-    float y;
+    double y;
     char z;
+    double q;
 };
 
 
@@ -15,10 +16,18 @@ int main(int argc, char const *argv[]) {
     union Value v;
 
     v.x = 1;
-    v.y = 0.1;
-    v.z = 'A';
+    printf("%d, %f, %c, %f\n", v.x, v.y, v.z, v.q);
 
-    printf("%d, %f, %c\n", v.x, v.y, v.z);
+    v.z = 'A';
+    printf("%d, %f, %c, %f\n", v.x, v.y, v.z, v.q);
+
+    v.y = 0.1;
+    printf("%d, %f, %c, %f\n", v.x, v.y, v.z, v.q);
+
+    v.q = 0.2;
+    printf("%d, %f, %c, %f\n", v.x, v.y, v.z, v.q);
+
+
     printf("%zu\n", sizeof(union Value));
 
     return 0;
