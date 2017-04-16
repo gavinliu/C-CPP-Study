@@ -25,5 +25,17 @@ int main(int argc, char const *argv[]) {
 
     printf("%p: %c | %ld\n", &p, *p, p - str2);
 
+    const char* fn = "Gavin";
+    const char* ln = " Liu";
+
+    char src[50], dest[50];
+
+    strcpy(src,  ln);
+    strcpy(dest, fn);
+
+    strcat(dest, src);
+
+    printf("%s\n", dest);
+
     return 0;
 }
